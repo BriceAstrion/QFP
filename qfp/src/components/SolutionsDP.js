@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import {FaBox, FaUtensils, FaCogs, FaTools, FaRecycle, FaLeaf} from "react-icons/fa";
+import { MdFastfood, MdWaterDrop, MdEnergySavingsLeaf } from "react-icons/md";
+
 
 const SolutionsDropdown = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -33,8 +36,8 @@ const SolutionsDropdown = () => {
             {/* Dropdown Menu */}
             {isOpen && (
                 <div
-                    className="absolute left-[-50px] top-full bg-white shadow-lg mt-2 z-20 border border-gray-300
-                    w-[1300px] p-6 rounded-lg"
+                    className="absolute left-[-50px] top-full bg-white shadow-lg mt-2 z-20 p-8 border border-gray-300 w-[1200px]"
+                    style={{ borderRadius: "8px" }}
                 >
                     <h5 className="text-2xl font-bold text-blue-800 mb-6">Solutions</h5>
 
@@ -42,16 +45,14 @@ const SolutionsDropdown = () => {
                         {/* Column 1: Categories */}
                         <div>
                             <ul className="space-y-6">
-                                <li><Link to="/solutions/categories" className="block hover:text-blue-600 flex items-center">
-                                        <span className="text-green-800 text-sm font-medium leading-none">CATEGORIES</span>
-                                    </Link>
+                                <li><Link to="/solutions/categories" className="text-green-700 text-sm font-medium
+                                 hover:text-blue-600 flex items-center"><FaUtensils className="mr-2"/> CATEGORIES </Link>
                                 </li>
-
-                                <li><Link to="/solutions/hard-food" className="block hover:text-blue-600">Hard
-                                        Food</Link>
+                                <li><Link to="/solutions/hard-food" className="text-green-600 text-sm
+                                 hover:text-blue-600 flex items-center"><MdFastfood className="mr-2" /> Hard Food </Link>
                                 </li>
-                                <li><Link to="/solutions/soft-food" className="block hover:text-blue-600">Soft
-                                        Food</Link>
+                                <li><Link to="/solutions/soft-food" className="text-green-600 text-sm
+                                hover:text-blue-600 flex items-center"><MdFastfood className="mr-2" /> Soft Food </Link>
                                 </li>
                             </ul>
                         </div>
@@ -59,23 +60,20 @@ const SolutionsDropdown = () => {
                         {/* Column 2: Packaging */}
                         <div>
                             <ul className="space-y-6">
-                                <li>
-                                    <Link to="/solutions/packaging"
-                                          className="block hover:text-blue-600 flex items-center">
-                                        <span className="text-green-800 text-sm font-medium leading-none">PACKAGING</span>
-                                    </Link>
+                                <li><Link to="/solutions/packaging" className="text-green-700 text-sm font-medium
+                                 hover:text-blue-600 flex items-center"><FaBox className="mr-2"/> PACKAGING </Link>
                                 </li>
-                                <li><Link to="/solutions/packaging/packages" className="block hover:text-blue-600">
-                                    Packages</Link>
+                                <li><Link to="/solutions/packaging/packages" className="text-green-600 text-sm
+                                 hover:text-blue-600 flex items-center"><FaBox className="mr-2" /> Packages </Link>
                                 </li>
-                                <li><Link to="/solutions/packaging/materials" className="block hover:text-blue-600">
-                                    Materials</Link>
+                                <li><Link to="/solutions/packaging/materials" className="text-green-600 text-sm
+                                 hover:text-blue-600 flex items-center"><FaCogs className="mr-2" /> Materials </Link>
                                 </li>
-                                <li><Link to="/solutions/packaging/openings" className="block hover:text-blue-600">
-                                    Openings</Link>
+                                <li><Link to="/solutions/packaging/openings" className="text-green-600 text-sm
+                                 hover:text-blue-600 flex items-center"><FaTools className="mr-2" /> Openings </Link>
                                 </li>
-                                <li><Link to="/solutions/packaging/differentiation" className="block hover:text-blue-600">
-                                    Differentiation</Link>
+                                <li><Link to="/solutions/packaging/differentiation" className="text-green-600 text-sm
+                                 hover:text-blue-600 flex items-center"><FaLeaf className="mr-2" /> Differentiation </Link>
                                 </li>
                             </ul>
                         </div>
@@ -83,25 +81,28 @@ const SolutionsDropdown = () => {
                         {/* Column 3: Equipment */}
                         <div>
                             <ul className="space-y-6">
-                                <li>
-                                    <Link to="/solutions/equipment" className="block hover:text-blue-600 flex items-center">
-                                        <span className="text-green-800 text-sm font-medium leading-none">EQUIPMENT</span>
-                                    </Link>
+                                <li><Link to="/solutions/equipment" className="text-green-700 text-sm font-medium
+                                 hover:text-blue-600 flex items-center"><FaBox className="mr-2"/> EQUIPMENT </Link>
                                 </li>
-                                <li><Link to="/solutions/equipment/processing" className="block hover:text-blue-600">
-                                    Processing equipment</Link>
+                                <li><Link to="/solutions/equipment/processing"  className="text-green-600 text-sm
+                                 hover:text-blue-600 flex items-center">
+                                    Processing Equipment</Link>
                                 </li>
-                                <li><Link to="/solutions/equipment/filling" className="block hover:text-blue-600">
-                                    Filling machines</Link>
+                                <li><Link to="/solutions/equipment/filling"  className="text-green-600 text-sm
+                                 hover:text-blue-600 flex items-center">
+                                    Filling Machines</Link>
                                 </li>
-                                <li><Link to="/solutions/equipment/downstream" className="block hover:text-blue-600">
-                                    Downstream equipment</Link>
+                                <li><Link to="/solutions/equipment/downstream"  className="text-green-600 text-sm
+                                 hover:text-blue-600 flex items-center">
+                                    Downstream Equipment</Link>
                                 </li>
-                                <li><Link to="/solutions/equipment/integrated" className="block hover:text-blue-600">
-                                    Integrated lines</Link>
+                                <li><Link to="/solutions/equipment/integrated"  className="text-green-600 text-sm
+                                 hover:text-blue-600 flex items-center">
+                                    Integrated Lines</Link>
                                 </li>
-                                <li><Link to="/solutions/equipment/factory" className="block hover:text-blue-600">
-                                    Factory sustainable solutions</Link>
+                                <li><Link to="/solutions/equipment/factory"  className="text-green-600 text-sm
+                                 hover:text-blue-600 flex items-center">
+                                    Factory Sustainable Solutions</Link>
                                 </li>
                             </ul>
                         </div>
@@ -109,18 +110,17 @@ const SolutionsDropdown = () => {
                         {/* Column 4: Services */}
                         <div>
                             <ul className="space-y-6">
-                                <li>
-                                    <Link to="/solutions/services"
-                                          className="block hover:text-blue-600 flex items-center">
-                                        <span
-                                            className="text-green-800 text-sm font-medium leading-none">SERVICES</span>
-                                    </Link>
+                                <li><Link to="/solutions/services" className="text-green-700 text-sm font-medium
+                                 hover:text-blue-600 flex items-center"><FaTools className="mr-2 text-green-800"/>
+                                    SERVICES </Link>
                                 </li>
-                                <li><Link to="/solutions/services/offerings" className="block hover:text-blue-600">
-                                    Service offerings</Link>
+                                <li><Link to="/solutions/services/offerings" className="text-green-600 text-sm
+                                 hover:text-blue-600 flex items-center"><FaRecycle className="mr-2"/>
+                                    Service Offerings </Link>
                                 </li>
-                                <li><Link to="/solutions/services/agreements" className="block hover:text-blue-600">
-                                    Service agreements</Link>
+                                <li><Link to="/solutions/services/agreements" className="text-green-600 text-sm
+                                 hover:text-blue-600 flex items-center"><FaCogs className="mr-2"/>
+                                    Service Agreements </Link>
                                 </li>
                             </ul>
                         </div>
@@ -128,18 +128,19 @@ const SolutionsDropdown = () => {
                         {/* Column 5: Rethinking Resources */}
                         <div>
                             <ul className="space-y-6">
-                                <li>
-                                    <Link to="/solutions/resources"
-                                          className="block hover:text-blue-600 flex items-center">
-                                        <span className="text-green-800 text-sm font-medium leading-none">RETHINKING
-                                            RESOURCES</span>
-                                    </Link>
+                                <li><Link to="/solutions/resources" className="text-green-700 text-sm font-medium
+                                    hover:text-blue-600 flex items-center"><FaRecycle className="mr-2"/>
+                                    RETHINKING RESOURCES </Link>
                                 </li>
-                                <li><Link to="/solutions/resources/energy" className="block hover:text-blue-600">Energy</Link>
+                                <li><Link to="/solutions/resources/energy" className="text-green-600 text-sm
+                                 hover:text-blue-600 flex items-center"><MdEnergySavingsLeaf className="mr-2"/>
+                                    Energy</Link>
                                 </li>
-                                <li><Link to="/solutions/resources/water" className="block hover:text-blue-600">Water</Link>
+                                <li><Link to="/solutions/resources/water" className="text-green-600 text-sm
+                                 hover:text-blue-600 flex items-center"><MdWaterDrop className="mr-2" /> Water </Link>
                                 </li>
-                                <li><Link to="/solutions/resources/waste" className="block hover:text-blue-600">Waste</Link>
+                                <li><Link to="/solutions/resources/waste"  className="text-green-600 text-sm
+                                 hover:text-blue-600 flex items-center"><FaRecycle className="mr-2" /> Waste </Link>
                                 </li>
                             </ul>
                         </div>

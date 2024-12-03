@@ -1,8 +1,8 @@
 import React from "react";
 import bg from "../assets/img.png";
-import Button from "../components/Button";
+import Button from "./Button";
 
-const Contact = () => {
+const ContactSec = () => {
     return (
         <div
             className="relative p-10 text-white rounded-lg shadow-lg overflow-hidden h-[485px] flex items-center"
@@ -14,13 +14,13 @@ const Contact = () => {
             }}
         >
             <div className="absolute left-40 p-8 rounded-lg max-w-xl">
-                <h1 className="text-4xl font-bold">Contact Quantum Food Preservation</h1>
+                <h1 className="text-3xl font-bold">Contact Quantum Food Preservation</h1>
                 <p className="mt-6 text-md leading-relaxed">
                     Any questions or queries about our company, our product and solution offerings, career opportunities,
                     or our sustainability approach? We are happy to answer your questions – please feel free to reach out.
                     We appreciate it!
                 </p>
-                <Button className="mt-6 bg-white text-blue-800 py-3 px-6 rounded-lg hover:bg-green-300 transition duration-300">
+                <Button className="mt-6 bg-white text-blue-700 py-3 px-6 rounded-lg hover:bg-green-300 transition duration-300">
                     Contact us
                 </Button>
             </div>
@@ -28,4 +28,4 @@ const Contact = () => {
     );
 };
 
-export default Contact;
+export default ContactSec;

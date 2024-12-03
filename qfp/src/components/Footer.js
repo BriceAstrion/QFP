@@ -45,7 +45,8 @@ const Footer = () => {
 
                 {/* Right Section: Social Media Icons */}
                 <div className="flex space-x-6">
-                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/company/quantum-food-preservation/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_companies%3Bq178xmz8Qj6ghgKyZmGS%2FQ%3D%3D"
+                       target="_blank" rel="noopener noreferrer">
                         <img src={linkedin} alt="LinkedIn" className="h-8 w-8 hover:opacity-75" />
                     </a>
                     <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
@@ -54,7 +55,7 @@ const Footer = () => {
                     <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
                         <img src={twt} alt="Twitter" className="h-8 w-8 hover:opacity-75" />
                     </a>
-                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/quantumfoodpreservation/?next=%2F" target="_blank" rel="noopener noreferrer">
                         <img src={insta} alt="Instagram" className="h-8 w-8 hover:opacity-75" />
                     </a>
                     <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
