@@ -5,7 +5,7 @@ import {
     FaShieldAlt, FaGlobe, FaSeedling, FaHandsHelping, FaCloudSunRain, FaTree, FaUsersCog
 } from 'react-icons/fa';
 
-const SDP = () => {
+const SustainabilityDP = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleMouseEnter = () => {
@@ -153,4 +153,4 @@ const SDP = () => {
     );
 };
 
-export default SDP;
+export default SustainabilityDP;
