@@ -1,12 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import who from "../assets/who.png";
 import purpose from "../assets/purpose.png";
 import company from "../assets/company.png";
 import facts from "../assets/facts.png";
-import heritage from "../assets/heritage.png";
 import leadership from "../assets/leadership.png";
-import strategy from "../assets/strategy.png";
-import values from "../assets/values.png";
 
 const Who = () => {
     return (
@@ -21,42 +19,65 @@ const Who = () => {
                     backgroundRepeat: "no-repeat",
                 }}
             >
-                <div className="absolute left-16 sm:left-32 p-8 rounded-lg max-w-lg sm:max-w-xl bg-opacity-80 bg-gray-800">
+                <div
+                    className="absolute left-16 sm:left-32 p-8 rounded-lg max-w-lg sm:max-w-xl bg-opacity-80 bg-gray-800">
                     <h1 className="text-4xl font-bold mb-4">Who We Are</h1>
                 </div>
             </div>
 
             {/* Description Section */}
-            <div className="px-10 py-20 text-left">
-                <h2 className="text-3xl font-bold mb-4">Tetra Pak: Protects What's Good</h2>
-                <p className="text-gray-600 max-w-3xl mb-10">
-                    We are committed to providing access to safe, nutritious food for hundreds of millions of people
-                    around the world, in a way that protects our planet. It is why we were created, and why we still
-                    exist today. And it is also why all our decisions are underpinned by our promise to protect what’s
-                    good. For us this means protecting food, protecting people, and protecting our planet.
+            <div className="ml-40 px-10 py-10 text-left"> {/* Reduced bottom padding */}
+                <h2 className="text-3xl font-bold text-green-600 mb-4">
+                    Quantum Food Preservation:{" "}
+                    <span className="text-red-600">The Future of Food Preservation, Today!</span>
+                </h2>
+                <p className="text-gray-600 max-w-3xl mb-6">
+                    At Quantum Food Preservation, we are passionate about revolutionizing the way food is stored and
+                    preserved. Our innovative technology harnesses the principles of quantum science to extend the shelf
+                    life of perishable foods, ensuring that freshness and flavour are never compromised. Committed to
+                    sustainability and health, we strive to minimize food waste while maximizing nutritional quality,
+                    empowering individuals and communities to make smarter food choices. Join us on a journey to protect
+                    what’s good for our plates and our planet.
                 </p>
             </div>
 
-            {/* Cards Section */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 px-10 ">
-                {cardData.map((card, index) => (
-                    <Card key={index} {...card} />
-                ))}
+            {/* Cards Section Title */}
+            <div className="ml-40 px-10 py-4 text-left"> {/* Reduced top padding */}
+                <h2 className="text-3xl font-bold text-green-600 mb-4">
+                    Get To Know Us!
+                </h2>
             </div>
+
+            {/* Cards Section */}
+            <div className="flex justify-center items-center px-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 w-full max-w-screen-xl">
+                    {cardData.map((card, index) => (
+                        <Card key={index} {...card} />
+                    ))}
+                </div>
+            </div>
+
+            {/* Footer Space */}
+            <div className="py-8"></div>
         </div>
     );
 };
 
-
 const Card = ({ title, text, link, image }) => {
     return (
         <div className="bg-white rounded-lg shadow-md p-5 hover:shadow-lg transition-shadow duration-200">
-            <img src={image} alt={title} className="rounded-t-lg w-full h-40 object-cover mb-4" />
+            <Link to={link}>
+                <img
+                    src={image}
+                    alt={title}
+                    className="rounded-t-lg w-full h-40 object-cover mb-4"
+                />
+            </Link>
             <h3 className="font-bold text-lg mb-2">{title}</h3>
             <p className="text-gray-700 mb-4">{text}</p>
-            <a href={link} className="text-blue-500 hover:underline">
+            <Link to={link} className="text-blue-500 hover:underline">
                 Learn more
-            </a>
+            </Link>
         </div>
     );
 };
@@ -64,45 +85,27 @@ const Card = ({ title, text, link, image }) => {
 const cardData = [
     {
         title: "Our purpose",
-        text: "",
+        text: "Discover our purpose.",
         link: "/about/who-we-are/purpose",
         image: purpose,
     },
     {
         title: "Our company",
-        text: "",
+        text: "Learn more about us.",
         link: "/about/who-we-are/company",
         image: company,
     },
     {
         title: "Facts & Figures",
-        text: "",
+        text: "Explore our key facts.",
         link: "/about/who-we-are/facts",
         image: facts,
     },
     {
-        title: "Our heritage",
-        text: "",
-        link: "/about/who-we-are/heritage",
-        image: heritage,
-    },
-    {
         title: "Our leadership",
-        text: "",
+        text: "Meet our leadership team.",
         link: "/about/who-we-are/leadership",
         image: leadership,
-    },
-    {
-        title: "Our strategy",
-        text: "",
-        link: "/about/who-we-are/strategy",
-        image: strategy,
-    },
-    {
-        title: "Our values",
-        text: "",
-        link: "/about/who-we-are/values",
-        image: values,
     },
 ];
 
