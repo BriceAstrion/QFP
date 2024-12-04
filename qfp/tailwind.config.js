@@ -4,7 +4,11 @@ module.exports = {
     extend: {
       colors: {
         primary: "#007050",
-        primaryHover: "#009E6F",
+        primaryHover: "#12cd96",
+      },
+      screens: {
+        'xs': '475px',
+        '3xl': '1600px',
       },
       width: {
         "1/3": "33.333333%",

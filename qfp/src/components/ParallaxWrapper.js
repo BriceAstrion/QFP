@@ -21,8 +21,6 @@ const ParallaxWrapper = ({
 
     return (
         <div className={className} ref={ref} style={style}>
-            {" "}
-    
             {children}
         </div>
     );

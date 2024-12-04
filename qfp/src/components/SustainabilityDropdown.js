@@ -5,7 +5,7 @@ import {
     FaShieldAlt, FaGlobe, FaSeedling, FaHandsHelping, FaCloudSunRain, FaTree, FaUsersCog
 } from 'react-icons/fa';
 
-const SustainabilityDP = () => {
+const SustainabilityDropdown = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleMouseEnter = () => {
@@ -38,7 +38,7 @@ const SustainabilityDP = () => {
                     style={{ borderRadius: "8px" }}
                 >
                     {/* Dropdown Header */}
-                    <h5 className="text-2xl font-bold text-blue-800 mb-6">
+                    <h5 className="text-xl font-bold text-blue-800 mb-6">
                         Sustainability
                     </h5>
 
@@ -153,4 +153,4 @@ const SustainabilityDP = () => {
     );
 };
 
-export default SustainabilityDP;
+export default SustainabilityDropdown;

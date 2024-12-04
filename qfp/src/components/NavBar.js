@@ -1,49 +1,39 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import logo from "../assets/logo.png";
-import AboutDP from "./AboutDP";
-import Solutions from "./SolutionsDP"
-import SustainabilityDP from "./SustainabilityDP";
-
+import AboutDropdown from "./AboutDropdown";
+import SolutionsDropdown from "./SolutionsDropdown";
+import SustainabilityDropdown from "./SustainabilityDropdown";
 
 const NavBar = () => {
     const [searchVisible, setSearchVisible] = useState(false);
-    const [searchQuery, setSearchQuery] = useState('');
-    const [searchResult, setSearchResult] = useState(null);
+    const [searchQuery, setSearchQuery] = useState("");
+    const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
     const navigate = useNavigate();
 
     // Dummy data
     const items = [];
 
-    // Toggle Search Bar Visibility
     const toggleSearch = () => {
         setSearchVisible(!searchVisible);
         if (searchVisible) {
-            setSearchQuery('');
+            setSearchQuery("");
         }
     };
 
-    // Handle Search Input Change
     const handleSearchInputChange = (e) => {
         setSearchQuery(e.target.value);
     };
 
-    // Handle Search Icon Click
     const handleSearchClick = () => {
-        // Find the matching result
-        const result = items.find(item => item.name.toLowerCase()
-            .includes(searchQuery.toLowerCase()));
-
+        const result = items.find((item) =>
+            item.name.toLowerCase().includes(searchQuery.toLowerCase())
+        );
         if (result) {
-            // If result found, redirect to the corresponding page
-            setSearchResult(result);
-            navigate(result.link); // Redirect to the corresponding page
-        } else {
-            setSearchResult(null); // Clear any previous results
+            navigate(result.link);
         }
     };
 
-    // Prevent Scrolling When Search Bar is Open
     React.useEffect(() => {
         if (searchVisible) {
             document.body.style.overflow = "hidden";
@@ -51,88 +41,157 @@ const NavBar = () => {
             document.body.style.overflow = "auto";
         }
         return () => {
-            document.body.style.overflow = "auto"; // Cleanup on unmount
+            document.body.style.overflow = "auto";
         };
     }, [searchVisible]);
 
-    // Reset search state when navigating to a new page
-    React.useEffect(() => {
-        setSearchVisible(false); // Hide the search bar on page load
-        setSearchQuery(''); // Clear the search query
-    }, [navigate]);
-
-
     return (
         <div className="bg-white shadow">
-            {/* Upper Section */}
+            {/* Navbar container */}
             <nav className="container mx-auto px-4 py-3 flex items-center justify-between">
-                {/* Logo Section with Link to Home */}
+                {/* Logo and branding */}
                 <div className="flex items-center space-x-3">
                     <Link to="/">
                         <img src={logo} alt="Logo" className="h-16 w-auto" />
                     </Link>
                     <div>
-                        <h1 className="text-xl font-bold text-blue-800">Quantum Food Preservation</h1>
-                        <p className="text-sm font-bold text-red-600 ml-12">PROTECTS WHAT'S GOOD</p>
+                        <h1 className="text-xl font-bold text-blue-800">
+                            Quantum Food Preservation
+                        </h1>
+                        <p className="text-sm font-bold text-red-600 ml-12">
+                            PROTECTS WHAT'S GOOD
+                        </p>
                     </div>
                 </div>
 
-                {/* Right Section: Upper Links */}
-                <div className="flex items-center space-x-6">
-                    <Link to="/contact-us" className="font-bold text-green-900 hover:text-blue-600"
-                          onClick={toggleSearch}>Contact Us</Link>
-                    <Link to="/careers" className="font-bold text-green-800 hover:text-blue-600"
-                          onClick={toggleSearch}>Careers</Link>
-                    <Link to="/media" className="font-bold text-green-800 hover:text-blue-600"
-                          onClick={toggleSearch}>Media</Link>
-                    <Link to="/suppliers" className="font-bold text-green-800 hover:text-blue-600"
-                          onClick={toggleSearch}>Suppliers</Link>
-                    <Link to="/global" className="font-bold text-green-800 hover:text-blue-600 flex items-center"
-                          onClick={toggleSearch}>
+                {/* Hamburger and Search for Mobile */}
+                <div className="flex items-center space-x-4 md:hidden">
+                    {/* Search Icon */}
+                    <button onClick={toggleSearch} className="text-green-600 hover:text-blue-600">
+                        <i
+                            className={`fas ${
+                                searchVisible ? "fa-times text-red-600" : "fa-search"
+                            }`}
+                            style={{ fontSize: "24px" }}
+                        ></i>
+                    </button>
+                    {/* Hamburger Icon */}
+                    <button
+                        onClick={() => setMobileMenuVisible(!mobileMenuVisible)}
+                        className="text-gray-700"
+                        aria-label="Toggle menu"
+                    >
+                        <i
+                            className={`fas ${
+                                mobileMenuVisible ? "fa-times" : "fa-bars"
+                            }`}
+                            style={{ fontSize: "24px" }}
+                        ></i>
+                    </button>
+                </div>
+
+                {/* Links for Desktop */}
+                <div className="hidden md:flex md:items-center space-x-6 font-bold text-green-800">
+                    <Link to="/contact-us" className="hover:text-blue-600">
+                        Contact Us
+                    </Link>
+                    <Link to="/careers" className="hover:text-blue-600">
+                        Careers
+                    </Link>
+                    <Link to="/media" className="hover:text-blue-600">
+                        Media
+                    </Link>
+                    <Link to="/suppliers" className="hover:text-blue-600">
+                        Suppliers
+                    </Link>
+                    <Link to="/global" className="hover:text-blue-600 flex items-center">
                         <i className="fas fa-globe mr-1"></i> Global
                     </Link>
-                    <Link to="/login" className="font-bold text-green-800 hover:text-blue-600 flex items-center"
-                          onClick={toggleSearch}>
+                    <Link to="/login" className="hover:text-blue-600 flex items-center">
                         <i className="fas fa-user mr-1"></i> Login
                     </Link>
                 </div>
             </nav>
 
-            {/* Divider Line */}
+            {/* Divider */}
             <hr className="border-gray-300" />
 
-            {/* Lower Links */}
-            <nav className="container mx-auto px-4 py-3 flex items-center justify-between">
-                <div className="flex space-x-8">
-                    <Solutions />
-                    <Link to="/insights" className="text-green-600 hover:text-blue-600"
-                          onClick={toggleSearch}>Insights</Link>
-                    <SustainabilityDP />
-                    <AboutDP />
-
+            {/* Second Navbar with Dropdowns (for Desktop) */}
+            <nav className="container mx-auto px-4 py-3 hidden md:flex md:items-center md:justify-between">
+                <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8">
+                    <SolutionsDropdown />
+                    <Link
+                        to="/insights"
+                        className="text-green-600 hover:text-blue-600"
+                    >
+                        Insights
+                    </Link>
+                    <SustainabilityDropdown />
+                    <AboutDropdown />
                 </div>
 
-                {/* Search Icon */}
-                <button onClick={toggleSearch} className="flex items-center">
+                {/* Search Icon for Desktop */}
+                <button onClick={toggleSearch} className="hidden md:flex items-center">
                     <i
-                        className={`fas ${searchVisible ? 'fa-times text-red-600' : 'fa-search text-green-600'}`}
-                        style={{ fontSize: '24px' }}
+                        className={`fas ${
+                            searchVisible
+                                ? "fa-times text-red-600"
+                                : "fa-search text-green-600"
+                        }`}
+                        style={{ fontSize: "24px" }}
                     ></i>
                 </button>
             </nav>
 
-            {/* Search Bar Section */}
+            {/* Mobile Menu Links */}
+            <div className={`${mobileMenuVisible ? "block" : "hidden"} md:hidden`}>
+                <div className="flex flex-col items-start space-y-4 px-4 py-2">
+                    <Link to="/contact-us" className="flex items-center space-x-2 text-green-600 hover:text-blue-600">
+                        <i className="fas fa-envelope"></i>
+                        <span>Contact Us</span>
+                    </Link>
+                    <Link to="/careers" className="flex items-center space-x-2 text-green-600 hover:text-blue-600">
+                        <i className="fas fa-briefcase"></i>
+                        <span>Careers</span>
+                    </Link>
+                    <Link to="/media" className="flex items-center space-x-2 text-green-600 hover:text-blue-600">
+                        <i className="fas fa-photo-video"></i>
+                        <span>Media</span>
+                    </Link>
+                    <Link to="/suppliers" className="flex items-center space-x-2 text-green-600 hover:text-blue-600">
+                        <i className="fas fa-industry"></i>
+                        <span>Suppliers</span>
+                    </Link>
+                    <Link to="/global" className="flex items-center space-x-2 text-green-600 hover:text-blue-600">
+                        <i className="fas fa-globe"></i>
+                        <span>Global</span>
+                    </Link>
+                    <Link to="/login" className="flex items-center space-x-2 text-green-600 hover:text-blue-600">
+                        <i className="fas fa-user"></i>
+                        <span>Login</span>
+                    </Link>
+                </div>
+
+                <div className="flex flex-col items-start space-y-4 px-4 py-2">
+                    <SolutionsDropdown />
+                    <Link to="/insights" className="flex items-center space-x-2 text-green-600 hover:text-blue-600">
+                        <span>Insights</span>
+                    </Link>
+                    <SustainabilityDropdown />
+                    <AboutDropdown />
+                </div>
+            </div>
+
+            {/* Search Bar for Mobile */}
             {searchVisible && (
-                <div className="container mx-auto px-4 py-3 flex flex-col items-center">
-                    {/* Search Input */}
+                <div className="container mx-auto px-4 py-3 flex flex-col items-center bg-white shadow-md z-50">
                     <div className="relative w-full max-w-lg">
                         <input
                             type="text"
                             value={searchQuery}
                             onChange={handleSearchInputChange}
                             placeholder="What are you looking for?"
-                            className="border border-gray-300 rounded-md w-full p-3 focus:outline-none focus:ring
-                            focus:ring-blue-300"
+                            className="border border-gray-300 rounded-md w-full p-3 focus:outline-none focus:ring focus:ring-blue-300"
                         />
                         <button
                             onClick={handleSearchClick}
