@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.65853c3f.css",
+    "main.js": "/static/js/main.c5e07992.js",
+    "static/js/453.110b5d48.chunk.js": "/static/js/453.110b5d48.chunk.js",
+    "static/media/company.png": "/static/media/company.e3636ec34eafb1043ada.png",
+    "static/media/who.png": "/static/media/who.56a66b3aeb4adf4a4497.png",
+    "static/media/heritage.png": "/static/media/heritage.52ba6254da4ef6c767b0.png",
+    "static/media/values.png": "/static/media/values.1cfd694305eeb617ab55.png",
+    "static/media/img.png": "/static/media/img.097d694c9a77b5390bea.png",
+    "static/media/cust.png": "/static/media/cust.abaef302e06c8a246f93.png",
+    "static/media/cov.png": "/static/media/cov.d2a0d7ae0ed1345cca3f.png",
+    "static/media/leadership.png": "/static/media/leadership.bf6d57bbd02376cca48d.png",
+    "static/media/inov.png": "/static/media/inov.245c0a0ebe294e3c82f9.png",
+    "static/media/logo2.png": "/static/media/logo2.05fcfe690631e6eee341.png",
+    "static/media/strategy.png": "/static/media/strategy.d150b42ad2fec5be221d.png",
+    "static/media/clean.png": "/static/media/clean.15a2358417ae942e2c6e.png",
+    "static/media/purpose.png": "/static/media/purpose.2c6e0fbf78c645db8b42.png",
+    "static/media/logo.png": "/static/media/logo.5c9efd745258fb319bc9.png",
+    "static/media/insta.png": "/static/media/insta.56d910d920b479d070a3.png",
+    "static/media/fb.png": "/static/media/fb.65d7fd272f6b445a0c84.png",
+    "static/media/facts.png": "/static/media/facts.505b8778a28d00e6afa1.png",
+    "index.html": "/index.html",
+    "main.65853c3f.css.map": "/static/css/main.65853c3f.css.map",
+    "main.c5e07992.js.map": "/static/js/main.c5e07992.js.map",
+    "453.110b5d48.chunk.js.map": "/static/js/453.110b5d48.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.65853c3f.css",
+    "static/js/main.c5e07992.js"
+  ]
+}
