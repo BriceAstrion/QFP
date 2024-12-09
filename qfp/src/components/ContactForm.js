@@ -162,11 +162,13 @@ const ContactForm = () => {
                             ) : (
                                 <div>
                                     <p className="text-gray-700 mt-2">Please fill out the form and tell us in more
-                                        detail about your query,<br/> and we will get back to you as soon as possible.</p>
+                                        detail about your query,<br/> and we will get back to you as soon as possible.
+                                    </p>
                                     <img src={contactImage} alt="Contact" className="mb-4 mt-3"/>
                                     <h1 className="text-3xl text-gray-600 font-bold mt-8 mb-4">Contact Numbers</h1>
                                     <p className="text-gray-700 mb-4">
-                                        For direct assistance with one of our team, feel free to contact<br/> the following
+                                        For direct assistance with one of our team, feel free to contact<br/> the
+                                        following
                                         numbers as you wish.
                                     </p>
                                     <div className="space-y-4">
@@ -363,7 +365,7 @@ const ContactForm = () => {
                     </div>
                 )}
             </div>
-
+            <div className="py-8"></div>
         </div>
     );
 };
