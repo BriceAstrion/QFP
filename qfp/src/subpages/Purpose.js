@@ -1,5 +1,5 @@
 import React from "react";
-import purpose from "../assets/purpose.png";
+import img from "../assets/img_1.png";
 
 const Purpose = () => {
     return (
@@ -8,7 +8,7 @@ const Purpose = () => {
             <div
                 className="relative p-10 text-white rounded-lg shadow-lg overflow-hidden h-[600px] flex items-center"
                 style={{
-                    backgroundImage: `url(${purpose})`,
+                    backgroundImage: `url(${img})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
