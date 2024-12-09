@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import AboutDropdown from "./AboutDropdown";
@@ -9,6 +9,7 @@ const NavBar = () => {
     const [searchVisible, setSearchVisible] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
+    const [openDropdown, setOpenDropdown] = useState(null); // Track which dropdown is open
     const navigate = useNavigate();
 
     // Dummy data
@@ -34,12 +35,27 @@ const NavBar = () => {
         }
     };
 
-    React.useEffect(() => {
-        if (searchVisible) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "auto";
-        }
+    const toggleDropdown = (dropdown) => {
+        setOpenDropdown(openDropdown === dropdown ? null : dropdown);
+    };
+
+    // Handle clicks outside dropdowns
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (!event.target.closest(".dropdown-container")) {
+                setOpenDropdown(null); // Close dropdowns if clicked outside
+            }
+        };
+
+        document.addEventListener("click", handleClickOutside);
+        return () => {
+            document.removeEventListener("click", handleClickOutside);
+        };
+    }, []);
+
+    // Manage body overflow when search is visible
+    useEffect(() => {
+        document.body.style.overflow = searchVisible ? "hidden" : "auto";
         return () => {
             document.body.style.overflow = "auto";
         };
@@ -95,7 +111,7 @@ const NavBar = () => {
                     <Link to="/contact-us" className="hover:text-blue-600">
                         Contact Us
                     </Link>
-                    <Link to="/careers" className="hover:text-blue-600">
+                    <Link to="/about/careers" className="hover:text-blue-600">
                         Careers
                     </Link>
                     <Link to="/media" className="hover:text-blue-600">
@@ -113,21 +129,27 @@ const NavBar = () => {
                 </div>
             </nav>
 
-            {/* Divider */}
-            <hr className="border-gray-300" />
-
             {/* Second Navbar with Dropdowns (for Desktop) */}
             <nav className="container mx-auto px-4 py-3 hidden md:flex md:items-center md:justify-between">
-                <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8">
-                    <SolutionsDropdown />
-                    <Link
-                        to="/insights"
-                        className="text-green-600 hover:text-blue-600"
-                    >
+                <div className="hidden md:flex md:items-center space-x-6 font-bold text-green-800">
+                    <div className="dropdown-container">
+                        <div onClick={() => toggleDropdown("solutions")}>
+                            <SolutionsDropdown isOpen={openDropdown === "solutions"} />
+                        </div>
+                    </div>
+                    <Link to="/insights" className="hover:text-blue-600">
                         Insights
                     </Link>
-                    <SustainabilityDropdown />
-                    <AboutDropdown />
+                    <div className="dropdown-container">
+                        <div onClick={() => toggleDropdown("sustainability")}>
+                            <SustainabilityDropdown isOpen={openDropdown === "sustainability"} />
+                        </div>
+                    </div>
+                    <div className="dropdown-container">
+                        <div onClick={() => toggleDropdown("about")}>
+                            <AboutDropdown isOpen={openDropdown === "about"} />
+                        </div>
+                    </div>
                 </div>
 
                 {/* Search Icon for Desktop */}

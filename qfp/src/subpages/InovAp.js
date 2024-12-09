@@ -33,32 +33,32 @@ const ScienceBehindSolution = () => {
         text-black rounded-lg shadow-lg mt-10 max-w-screen-lg mx-auto">
             {/* Left Section (Text) */}
             <div className="sm:w-1/2 max-w-lg p-6 sm:p-8">
-                <h2 className="text-3xl font-bold mb-4 text-blue-600">The Science Behind the Solution</h2>
+                <h2 className="text-3xl font-bold mb-4 text-gray-800">The Science Behind the Solution</h2>
                 <p className="mb-4">
                     Our team has developed a game-changing hydrogel using a combination of seaweed-derived alginate and
-                    <strong className="text-blue-600"> CMC (carboxymethyl cellulose)</strong>, a naturally occurring
+                    <strong className="text-gray-800"> CMC (carboxymethyl cellulose)</strong>, a naturally occurring
                     polysaccharide.
                     Together this forms a protective membrane that:
                 </p>
                 <ul className="list-disc list-inside mb-4">
-                    <li><strong className="text-green-400">Extends freshness:</strong> it slows down enzymatic
+                    <li><strong className="text-gray-800">Extends freshness:</strong> it slows down enzymatic
                         activity and reduces the oxidation process to keep your food the same quality as day one.</li>
-                    <li><strong className="text-green-400">Versatile protection:</strong> fruits, vegetables, meat,
+                    <li><strong className="text-gray-800">Versatile protection:</strong> fruits, vegetables, meat,
                         fish, and even nuts – our solution protects a wide variety of consumables.</li>
                 </ul>
-                <h3 className="text-2xl font-bold mt-6 mb-2 text-green-700">A Cleaner Future</h3>
+                <h3 className="text-2xl font-bold mt-6 mb-2 text-gray-800">A Cleaner Future</h3>
                 <p className="mb-4">
                     At QFP, we are not preserving food – we are preserving our planet. Our membrane is a sustainable
                     alternative to traditional plastic packaging, helping to fight the global plastic pollution crisis.
                 </p>
-                <h3 className="text-2xl font-bold mt-6 mb-2 text-red-600">Consumer - Beneficial Qualities</h3>
+                <h3 className="text-2xl font-bold mt-6 mb-2 text-gray-800">Consumer - Beneficial Qualities</h3>
                 <p className="mb-4">
                     At QPF, we have designed a solution for consumers:
                 </p>
                 <ol className="list-decimal list-inside mb-4">
-                    <li><strong className="text-red-400">Longer Expiry Date:</strong> Extending the shelf
+                    <li><strong className="text-gray-800">Longer Expiry Date:</strong> Extending the shelf
                         life of your food, giving you more time to enjoy your purchases.</li>
-                    <li><strong className="text-red-400">Easy Removal:</strong> Our water-soluble membrane can be
+                    <li><strong className="text-gray-800">Easy Removal:</strong> Our water-soluble membrane can be
                         easily washed off when you’re ready to consume your food.</li>
                 </ol>
             </div>

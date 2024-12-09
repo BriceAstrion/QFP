@@ -27,9 +27,10 @@ const Who = () => {
 
             {/* Description Section */}
             <div className="ml-40 px-10 py-10 text-left"> {/* Reduced bottom padding */}
-                <h2 className="text-3xl font-bold text-green-600 mb-4">
+                <h2 className="text-3xl font-bold text-black mb-4">
                     Quantum Food Preservation:{" "}
-                    <span className="text-red-600">The Future of Food Preservation, Today!</span>
+                    <p><span className="text-black">Preserving the Taste of Tomorrow,
+                        Enhancing Nature’s Freshness!</span></p>
                 </h2>
                 <p className="text-gray-600 max-w-3xl mb-6">
                     At Quantum Food Preservation, we are passionate about revolutionizing the way food is stored and
@@ -43,7 +44,7 @@ const Who = () => {
 
             {/* Cards Section Title */}
             <div className="ml-40 px-10 py-4 text-left"> {/* Reduced top padding */}
-                <h2 className="text-3xl font-bold text-green-600 mb-4">
+                <h2 className="text-3xl font-bold text-black mb-4">
                     Get To Know Us!
                 </h2>
             </div>
