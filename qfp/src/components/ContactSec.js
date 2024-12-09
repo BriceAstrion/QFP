@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import bg from "../assets/img.png";
 import Button from "./Button";
 
@@ -20,9 +21,12 @@ const ContactSec = () => {
                     or our sustainability approach? We are happy to answer your questions – please feel free to reach out.
                     We appreciate it!
                 </p>
-                <Button className="mt-6 bg-white text-blue-700 py-3 px-6 rounded-lg hover:bg-green-300 transition duration-300">
-                    Contact us
-                </Button>
+                <Link to="/contact-us">
+                    <button className="mt-6 bg-white text-xl text-bold text-blue-700 py-3 px-6 rounded-lg
+                    hover:bg-green-300 transition duration-300">
+                        Contact us
+                    </button>
+                </Link>
             </div>
         </div>
     );

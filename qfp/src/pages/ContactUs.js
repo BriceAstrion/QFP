@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import bg from "../assets/img.png";
 import business from "../assets/business.png";
 import careers from "../assets/careers.png";
@@ -86,7 +87,7 @@ const ContactUs = () => {
                             />
                         </a>
                         <div className="p-6 text-left">
-                            <h5 className="text-lg font-bold">Suppliers</h5>
+                            <h5 className="text-lg font-bold">Get To Know Our Suppliers</h5>
                             <p className="text-sm text-gray-600 mt-2">
                                 Our supplier partners play a fundamental role in making a positive impact along our
                                 value chain
@@ -100,44 +101,43 @@ const ContactUs = () => {
 
                     {/* Contact Press and Media */}
                     <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <a href="#contactpress">
+                        <Link to="/contact-us/press-and-media">
                             <img
                                 src={contactpress}
                                 alt="Press Icon"
                                 className="w-full h-[180px] object-cover"
                             />
-                        </a>
+                        </Link>
                         <div className="p-6 text-left">
                             <h5 className="text-lg font-bold">Contact Press & Media</h5>
                             <p className="text-sm text-gray-600 mt-2">
                                 If you are a media representative, please contact our Press & Media team using the
                                 contact details below to make your specific enquiry.
                             </p>
-                            <a href="#press-and-media" className="text-blue-600 mt-4 block font-semibold">
+                            <Link to="/contact-us/press-and-media" className="text-blue-600 mt-4 block font-semibold">
                                 Contact Press & Media
-                            </a>
+                            </Link>
                         </div>
                     </div>
 
                     {/* Contact QFP */}
                     <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <a href="#company">
+                        <Link to="/contact-us/contact-qfp">
                             <img
                                 src={company}
                                 alt="Contact Icon"
                                 className="w-full h-[180px] object-cover"
                             />
-                        </a>
-                       <div className="p-6 text-left">
+                        </Link>
+                        <div className="p-6 text-left">
                             <h5 className="text-lg font-bold">Contact QFP</h5>
                             <p className="text-sm text-gray-600 mt-2">
                                 Contact page for any general questions about our company, our sustainability approach,
-                                or how to
-                                get in touch.
+                                or how to get in touch.
                             </p>
-                            <a href="#contact" className="text-blue-600 mt-4 block font-semibold">
+                            <Link to="/contact-us/contact-qfp" className="text-blue-600 mt-4 block font-semibold">
                                 Read more
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
