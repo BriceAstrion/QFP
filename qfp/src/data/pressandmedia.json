@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Valerie Rosell",
+    "title": "Public Relations Director",
+    "email": "v.a.rosell@example.com"
+  },
+  {
+    "name": "Brice Nana",
+    "title": "Public Relations Manager - Integrated Solutions",
+    "email": "b.a.graal@example.com"
+  },
+  {
+    "name": "Teun Van Kempen",
+    "title": "Public Relations Manager - Sustainability and Operating Units",
+    "email": "t.v.kempen@example.com"
+  },
+  {
+    "name": "Saajan Zandviet",
+    "title": "Public Relations Manager - QFP Laval and Corporate Public Relations",
+    "email": "s.j.zandviet@example.com"
+  }
+]
