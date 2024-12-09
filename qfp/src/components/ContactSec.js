@@ -6,7 +6,7 @@ import Button from "./Button";
 const ContactSec = () => {
     return (
         <div
-            className="relative p-10 text-white rounded-lg shadow-lg overflow-hidden h-[485px] flex items-center"
+            className="relative p-10 text-white  overflow-hidden h-[485px] flex items-center"
             style={{
                 backgroundImage: `url(${bg})`,
                 backgroundSize: "contain",
