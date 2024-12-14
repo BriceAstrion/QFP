@@ -73,7 +73,7 @@ const SolutionsDropdown = () => {
                                 <li>
                                     <button
                                         onClick={() => handleSelection("/solutions/hard-food")}
-                                        className="text-green-600 text-sm hover:text-blue-600 flex items-center"
+                                        className="text-black text-sm hover:text-blue-600 flex items-center"
                                     >
                                         <MdFastfood className="mr-2" /> Hard Food
                                     </button>
@@ -81,7 +81,7 @@ const SolutionsDropdown = () => {
                                 <li>
                                     <button
                                         onClick={() => handleSelection("/solutions/soft-food")}
-                                        className="text-green-600 text-sm hover:text-blue-600 flex items-center"
+                                        className="text-black text-sm hover:text-blue-600 flex items-center"
                                     >
                                         <MdFastfood className="mr-2" /> Soft Food
                                     </button>
@@ -95,7 +95,8 @@ const SolutionsDropdown = () => {
                                 <li>
                                     <button
                                         onClick={() => handleSelection("/solutions/packaging")}
-                                        className="text-green-700 text-sm font-medium hover:text-blue-600 flex items-center"
+                                        className="text-green-700 text-sm font-medium hover:text-blue-600
+                                        flex items-center"
                                     >
                                         <FaBox className="mr-2" /> PACKAGING
                                     </button>
@@ -103,7 +104,7 @@ const SolutionsDropdown = () => {
                                 <li>
                                     <button
                                         onClick={() => handleSelection("/solutions/packaging/packages")}
-                                        className="text-green-600 text-sm hover:text-blue-600 flex items-center"
+                                        className="text-black text-sm hover:text-blue-600 flex items-center"
                                     >
                                         <FaBox className="mr-2" /> Packages
                                     </button>
@@ -111,7 +112,7 @@ const SolutionsDropdown = () => {
                                 <li>
                                     <button
                                         onClick={() => handleSelection("/solutions/packaging/materials")}
-                                        className="text-green-600 text-sm hover:text-blue-600 flex items-center"
+                                        className="text-black text-sm hover:text-blue-600 flex items-center"
                                     >
                                         <FaCogs className="mr-2" /> Materials
                                     </button>
@@ -119,7 +120,7 @@ const SolutionsDropdown = () => {
                                 <li>
                                     <button
                                         onClick={() => handleSelection("/solutions/packaging/openings")}
-                                        className="text-green-600 text-sm hover:text-blue-600 flex items-center"
+                                        className="text-black text-sm hover:text-blue-600 flex items-center"
                                     >
                                         <FaTools className="mr-2" /> Openings
                                     </button>
@@ -127,7 +128,7 @@ const SolutionsDropdown = () => {
                                 <li>
                                     <button
                                         onClick={() => handleSelection("/solutions/packaging/differentiation")}
-                                        className="text-green-600 text-sm hover:text-blue-600 flex items-center"
+                                        className="text-black text-sm hover:text-blue-600 flex items-center"
                                     >
                                         <FaLeaf className="mr-2" /> Differentiation
                                     </button>
@@ -141,15 +142,16 @@ const SolutionsDropdown = () => {
                                 <li>
                                     <button
                                         onClick={() => handleSelection("/solutions/resources")}
-                                        className="text-green-700 text-sm font-medium hover:text-blue-600 flex items-center"
+                                        className="text-green-700 text-sm font-medium hover:text-blue-600
+                                        flex items-center"
                                     >
-                                        <FaRecycle className="mr-2" /> RETHINKING RESOURCES
+                                        <FaRecycle className="mr-2"/> RETHINKING RESOURCES
                                     </button>
                                 </li>
                                 <li>
                                     <button
                                         onClick={() => handleSelection("/solutions/resources/energy")}
-                                        className="text-green-600 text-sm hover:text-blue-600 flex items-center"
+                                        className="text-black text-sm hover:text-blue-600 flex items-center"
                                     >
                                         <MdEnergySavingsLeaf className="mr-2" /> Energy
                                     </button>
@@ -157,7 +159,7 @@ const SolutionsDropdown = () => {
                                 <li>
                                     <button
                                         onClick={() => handleSelection("/solutions/resources/water")}
-                                        className="text-green-600 text-sm hover:text-blue-600 flex items-center"
+                                        className="text-black text-sm hover:text-blue-600 flex items-center"
                                     >
                                         <MdWaterDrop className="mr-2" /> Water
                                     </button>
@@ -165,7 +167,7 @@ const SolutionsDropdown = () => {
                                 <li>
                                     <button
                                         onClick={() => handleSelection("/solutions/resources/waste")}
-                                        className="text-green-600 text-sm hover:text-blue-600 flex items-center"
+                                        className="text-black text-sm hover:text-blue-600 flex items-center"
                                     >
                                         <FaRecycle className="mr-2" /> Waste
                                     </button>
