@@ -20,17 +20,18 @@ const Who = () => {
                 }}
             >
                 <div
-                    className="absolute left-16 sm:left-32 p-8 rounded-lg max-w-lg sm:max-w-xl bg-opacity-80 bg-gray-800">
+                    className="absolute left-16 sm:left-32 p-8 rounded-lg max-w-lg sm:max-w-xl bg-opacity-80 bg-gray-800"
+                >
                     <h1 className="text-4xl font-bold mb-4">Who We Are</h1>
                 </div>
             </div>
 
             {/* Description Section */}
-            <div className="ml-40 px-10 py-10 text-left"> {/* Reduced bottom padding */}
+            <div className="ml-40 px-10 py-10 text-left">
                 <h2 className="text-3xl font-bold text-black mb-4">
                     Quantum Food Preservation:{" "}
-                    <p><span className="text-black">Preserving the Taste of Tomorrow,
-                        Enhancing Nature’s Freshness!</span></p>
+                    <span className="text-black">Preserving the Taste <br/> of Tomorrow,
+                        Enhancing Nature’s Freshness!</span>
                 </h2>
                 <p className="text-gray-600 max-w-3xl mb-6">
                     At Quantum Food Preservation, we are passionate about revolutionizing the way food is stored and
@@ -43,17 +44,15 @@ const Who = () => {
             </div>
 
             {/* Cards Section Title */}
-            <div className="ml-40 px-10 py-4 text-left"> {/* Reduced top padding */}
-                <h2 className="text-3xl font-bold text-black mb-4">
-                    Get To Know Us!
-                </h2>
+            <div className="ml-40 px-10 py-4 text-left">
+                <h2 className="text-3xl font-bold text-black mb-4">Get To Know Us!</h2>
             </div>
 
             {/* Cards Section */}
             <div className="flex justify-center items-center px-10">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 w-full max-w-screen-xl">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full max-w-screen-xl border-r border-gray-300">
                     {cardData.map((card, index) => (
-                        <Card key={index} {...card} />
+                        <Card key={index} {...card} isLast={index === cardData.length - 1} />
                     ))}
                 </div>
             </div>
@@ -64,9 +63,13 @@ const Who = () => {
     );
 };
 
-const Card = ({ title, text, link, image }) => {
+const Card = ({ title, text, link, image, isLast }) => {
     return (
-        <div className="bg-white rounded-lg shadow-md p-5 hover:shadow-lg transition-shadow duration-200">
+        <div
+            className={`bg-white p-5 hover:shadow-lg transition-shadow duration-200 ${
+                isLast ? "" : "border-r border-gray-300"
+            }`}
+        >
             <Link to={link}>
                 <img
                     src={image}
@@ -74,7 +77,7 @@ const Card = ({ title, text, link, image }) => {
                     className="rounded-t-lg w-full h-40 object-cover mb-4"
                 />
             </Link>
-            <h3 className="font-bold text-lg mb-2">{title}</h3>
+            <h3 className="font-bold text-lg text-gray-800 mb-2">{title}</h3>
             <p className="text-gray-700 mb-4">{text}</p>
             <Link to={link} className="text-blue-500 hover:underline">
                 Learn more
